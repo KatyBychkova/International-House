@@ -1,0 +1,351 @@
+body {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.17em;
+  color: #131718;
+}
+
+.centered-wrapper {
+  background-color: #e5e5e5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.wrapper {
+  display: block;
+  background-color: #fff;
+  color: #c4c4c4;
+  width: 1140px;
+  padding: 50px;
+  min-height: 624px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+}
+
+/*----------------------- Правила подачи апелляции ------------------------------ */
+.rules__title {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.17em;
+  color: #131718;
+}
+
+ul.rules__list {
+  padding: 20px 0 20px 24px;
+}
+
+.rules__list li {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.17em;
+  color: #131718;
+  position: relative;
+  padding-left: 16px;
+}
+
+.rules__list li:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.rules__list li::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ec1630;
+  top: 8px;
+  left: 0;
+  border-radius: 50%;
+}
+
+/*----------------------- Инструкции по отправке форм ------------------------------ */
+
+.section-instructions {
+  margin: 25px 0 48px 0;
+}
+
+.instructions__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.instructions__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.instructions__item {
+  width: 274px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.instructions__title {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.17em;
+  text-align: center;
+  color: #000000;
+}
+
+.instructions__title {
+  text-transform: uppercase;
+  margin-bottom: 23px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+
+.instructions__title span {
+  text-transform: lowercase;
+  display: block;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.instructions__item--to-download {
+  width: 230px;
+}
+
+.instructions__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.form {
+  position: relative;
+  width: 85px;
+  height: 110px;
+}
+
+.form + .form {
+  margin-left: 26px;
+}
+
+/*----------------------- Скачать файлы ------------------------------ */
+
+.instructions__form--to-download a {
+  position: absolute;
+  bottom: 16.5px;
+  left: 18px;
+  font-size: 12px;
+  line-height: 1.17em;
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+  color: #ec1630;
+}
+
+.form img {
+  position: relative;
+}
+
+.load-input {
+  display: none;
+}
+
+.load-btn {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.load-btn::before {
+  position: absolute;
+  background-image: url(../images/add-icon.svg);
+  content: "";
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.form.--is-loaded .load-btn::before {
+  position: absolute;
+  background-image: url(../images/edit-icon.svg);
+  content: "";
+  width: 18px;
+  height: 18px;
+  top: 8px;
+  left: 12px;
+  -webkit-transform: translate(0);
+  -ms-transform: translate(0);
+  transform: translate(0);
+}
+
+/*----------------------- Загрузить файлы ------------------------------ */
+
+.to-load-1::before,
+.to-load-2::before {
+  background-repeat: no-repeat;
+  content: "";
+  top: 54px;
+  left: 30px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.to-load-1::before {
+  background-image: url("../images/1.svg");
+}
+
+.to-load-2::before {
+  background-image: url("../images/2.svg");
+}
+
+.--is-loaded.to-load-1::before,
+.--is-loaded.to-load-2::before {
+  content: "";
+  top: 54px;
+  left: 16px;
+  position: absolute;
+}
+
+.--is-loaded.to-load-1::after,
+.--is-loaded.to-load-2::after {
+  content: "";
+  background-image: url("../images/chek-icon.svg");
+  background-repeat: no-repeat;
+  top: 54px;
+  left: 34px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.instructions__item--to-pay {
+  text-align: center;
+  margin-right: 26px;
+}
+.instructions__button {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.57em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 7px 50px;
+  background: #ec1630;
+  border-color: transparent;
+  border-radius: 25px;
+  margin-bottom: 62px;
+}
+
+/*----------------------- Оплатить ------------------------------ */
+
+.instructions__item--to-pay em {
+  text-transform: lowercase;
+  display: block;
+  font-style: normal;
+  padding: 18px 0;
+  font-size: 12px;
+  line-height: 1.17em;
+  text-align: center;
+  color: #ec1630;
+}
+
+.instructions__item--to-pay em::first-letter {
+  text-transform: uppercase;
+}
+
+/*----------------------- Блок с важной информацией ------------------------------ */
+.section-info {
+  margin-bottom: 50px;
+}
+
+.info__items {
+  background: #eeeeee;
+  border: 1px solid #ec1630;
+  padding: 15px;
+}
+
+.info__items p {
+  font-size: 12px;
+  line-height: 1.17em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #000000;
+}
+
+/*----------------------- Адаптив ------------------------------ */
+
+@media (max-width: 1030px) {
+  .centered-wrapper {
+    height: auto;
+  }
+  .instructions__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .instructions__item {
+    width: 270px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .instructions__item + .instructions__item {
+    margin-top: 70px;
+  }
+
+  .instructions__item--to-pay {
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 700px) {
+  .rules__list li,
+  .rules__title,
+  .rules__title {
+    font-size: 16px;
+  }
+
+  .instructions__item + .instructions__item {
+    margin-top: 50px;
+  }
+
+  .instructions__button {
+    font-size: 12px;
+    padding: 7px 46px;
+  }
+}
